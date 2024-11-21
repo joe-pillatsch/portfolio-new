@@ -1,0 +1,87 @@
+/* Ensuring styles remain intact and responsive */
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.slide {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  scroll-snap-align: start;
+  padding: 20px 0;
+}
+
+.container {
+  max-width: 1000px;
+}
+
+.social-icons img {
+  width: 25px; /* Adjust to preferred size */
+  height: 25px;
+  margin: 0 5px; /* Even margin for uniform spacing */
+}
+
+.project-icons {
+  width: 200px; /* Adjust size as needed */
+  height: auto;
+  margin: 0 15px;
+}
+
+.jobs-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch; /* Ensures all columns are the same height */
+  margin-top: 40px;
+  width: 100%;
+}
+
+.job-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute items evenly */
+  align-items: center; /* Center align the text horizontally */
+  text-align: center;
+  max-width: 250px;
+  height: 100%;
+  background-color: #000000; /* Example background color for visibility */
+  padding: 20px;
+  border-radius: 15px;
+  box-sizing: border-box; /* Include padding in height calculations */
+}
+
+.job-card h3 {
+  margin: 10px 0; /* Adjust as needed to align with the guide lines */
+}
+
+.job-card p {
+  margin: 0; /* Remove default margins */
+  margin-top: 10px; /* Add spacing between lines */
+}
+
+.job-card .social-icons {
+  margin-top: 10px; /* Adjust spacing above the icons */
+}
+
+/* Make sure the job card takes up full height */
+.jobs-section .col-md-4 {
+  display: flex;
+  align-items: stretch; /* Ensures all job cards are the same height */
+}
+
+.arrow {
+  font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+  .jobs-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .project-icons {
+    width: 100px; /* Adjust for smaller screens */
+  }
+}
