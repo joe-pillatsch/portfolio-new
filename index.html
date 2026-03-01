@@ -1,89 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>joe pillatsch</title>
-  <!-- MDB icon -->
-  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <!-- Google Fonts Roboto -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
-  <!-- MDB -->
-  <link rel="stylesheet" href="css/mdb.min.css" />
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    html {
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ─── Sections ─── */
+    .section {
+      height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* ─── Hero ─── */
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 48px;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+    }
+
+    .scroll-hint svg {
+      width: 24px;
+      height: 24px;
+      stroke: rgba(255, 255, 255, 0.5);
+      transition: stroke 0.3s;
+    }
+
+    .scroll-hint:hover svg {
+      stroke: #fff;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(8px); }
+      60% { transform: translateY(4px); }
+    }
+
+    /* ─── Work & Projects ─── */
+    .work-heading {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 60px;
+    }
+
+    .projects-grid {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 100px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 240px;
+    }
+
+    .logo-wrapper {
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .logo-wrapper img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .project-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .project-card .role {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 4px;
+    }
+
+    .project-card .dates {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 20px;
+    }
+
+    .social-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .social-row a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      opacity: 0.5;
+      transition: opacity 0.25s;
+    }
+
+    .social-row a:hover {
+      opacity: 1;
+    }
+
+    .social-row img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    /* ─── Contact / Footer ─── */
+    .contact-icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .contact-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      opacity: 0.6;
+      transition: opacity 0.25s;
+    }
+
+    .contact-icons a:hover {
+      opacity: 1;
+    }
+
+    .contact-icons img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    .copyright {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: 0.02em;
+    }
+
+    /* ─── Mobile ─── */
+    @media (max-width: 640px) {
+      .projects-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 56px;
+      }
+
+      .project-card {
+        width: 200px;
+      }
+
+      .logo-wrapper {
+        width: 110px;
+        height: 110px;
+      }
+
+      .work-heading {
+        margin-bottom: 40px;
+      }
+    }
+  </style>
+</head>
 <body>
-  <section class="slide text-center">
+
+  <!-- Section 1: Hero -->
+  <section class="section hero">
     <h1>joe pillatsch</h1>
-    <div class="arrow">
-      <i class="fas fa-chevron-down"></i>
-    </div>
+    <a href="#work" class="scroll-hint" aria-label="Scroll down">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+      </svg>
+    </a>
   </section>
-  <section class="slide text-center">
-    <div class="container">
-      <h2>Work & Projects</h2>
-      <div class="row mt-4 jobs-section">
-        <div class="col-md-4 d-flex justify-content-center">
-          <div class="job-card">
-            <img src="img/work-projects/single-white.png" alt="Single Logo" class="project-icons mb-2" />
-            <h3>Single.xyz</h3>
-            <p>VP of Operations</p>
-            <p>2018 - Present</p>
-            <div class="social-icons d-flex justify-content-center">
-              <a href="https://twitter.com/single_xyz" class="text-white mx-2">
-                <img src="img/contact/x-white.png" alt="X Logo" style="width: 25px; height: 25px;">
-              </a>
-              <a href="https://single.xyz" class="text-white mx-2">
-                <img src="img/contact/globe-white.png" alt="Website" style="width: 25px; height: 25px;">
-              </a>
-              <a href="https://instagram.com/single.xyz" class="text-white mx-2">
-                <img src="img/contact/instagram-white.png" alt="Instagram" style="width: 25px; height: 25px;">
-              </a>
-            </div>
-          </div>
+
+  <!-- Section 2: Work & Projects -->
+  <section class="section" id="work">
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="logo-wrapper">
+          <img src="img/work-projects/single-white.png" alt="Single.xyz logo" />
         </div>
-        <div class="col-md-4 d-flex justify-content-center">
-          <div class="job-card">
-            <img src="img/work-projects/nsp-white.png" alt="NSP Logo" class="project-icons mb-2" />
-            <h3>Nashville Sound Panels</h3>
-            <p>Founder</p>
-            <p>2016 - 2022</p>
-            <div class="social-icons d-flex justify-content-center">
-              <a href="https://nashvillesoundpanels.com" class="text-white mx-2">
-                <img src="img/contact/globe-white.png" alt="Website" style="width: 25px; height: 25px;">
-              </a>
-              <a href="https://instagram.com/single.xyz" class="text-white mx-2">
-                <img src="img/contact/instagram-white.png" alt="Instagram" style="width: 25px; height: 25px;">
-              </a>
-            </div>
-          </div>
+        <div class="social-row">
+          <a href="https://twitter.com/single_xyz" target="_blank" rel="noopener" aria-label="X / Twitter">
+            <img src="img/contact/x-white.png" alt="" />
+          </a>
+          <a href="https://single.xyz" target="_blank" rel="noopener" aria-label="Website">
+            <img src="img/contact/globe-white.png" alt="" />
+          </a>
+          <a href="https://instagram.com/single.xyz" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="img/contact/instagram-white.png" alt="" />
+          </a>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="slide text-center">
-    <div class="social-icons d-flex justify-content-center mb-4">
-      <a href="https://x.com/joepillatsch" class="text-white mx-2">
-        <img src="img/contact/x-white.png" alt="X Logo" style="width: 25px; height: 25px;">
-      </a>
-      <a href="mailto:joe.pillatsch@gmail.com" class="text-white mx-2">
-        <img src="img/contact/mail-white.png" alt="Mail Logo" style="width: 30px; height: 30px;">
-      </a>
-      <a href="https://linkedin.com/in/joe-pillatsch/" class="text-white mx-2">
-        <img src="img/contact/linked-in-white.png" alt="LinkedIn" style="width: 25px; height: 25px;">
-      </a>
-    </div>
-    <h5>Copyright © joe pillatsch 2024</h5>
-    </div>
-  </section>
-  <!-- MDB -->
-  <script type="text/javascript" src="js/mdb.umd.min.js"></script>
-</body>
 
+      <div class="project-card">
+        <div class="logo-wrapper">
+          <img src="img/work-projects/nsp-white.png" alt="Nashville Sound Panels logo" />
+        </div>
+        <div class="social-row">
+          <a href="https://nashvillesoundpanels.com" target="_blank" rel="noopener" aria-label="Website">
+            <img src="img/contact/globe-white.png" alt="" />
+          </a>
+          <a href="https://instagram.com/nashvillesoundpanels" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="img/contact/instagram-white.png" alt="" />
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 3: Contact -->
+  <section class="section">
+    <div class="contact-icons">
+      <a href="https://x.com/joepillatsch" target="_blank" rel="noopener" aria-label="X / Twitter">
+        <img src="img/contact/x-white.png" alt="" />
+      </a>
+      <a href="mailto:joe.pillatsch@gmail.com" aria-label="Email">
+        <img src="img/contact/mail-white.png" alt="" />
+      </a>
+      <a href="https://linkedin.com/in/joe-pillatsch/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <img src="img/contact/linked-in-white.png" alt="" />
+      </a>
+    </div>
+    <p class="copyright">Copyright &copy; joe pillatsch 2026</p>
+  </section>
+
+</body>
 </html>
