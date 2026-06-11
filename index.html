@@ -129,6 +129,40 @@
       object-fit: contain;
     }
 
+    /* ─── Secondary projects ─── */
+    .secondary-divider {
+      width: min(420px, 70%);
+      height: 1px;
+      background: rgba(255, 255, 255, 0.15);
+      margin: 64px auto 48px;
+    }
+
+    .secondary-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 72px;
+    }
+
+    .secondary-grid a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 56px;
+      opacity: 0.5;
+      transition: opacity 0.25s;
+    }
+
+    .secondary-grid a:hover {
+      opacity: 1;
+    }
+
+    .secondary-grid img {
+      height: 56px;
+      width: auto;
+      object-fit: contain;
+    }
+
     /* ─── Contact / Footer ─── */
     .contact-icons {
       display: flex;
@@ -182,6 +216,19 @@
         height: 110px;
       }
 
+      .secondary-divider {
+        margin: 48px auto 40px;
+      }
+
+      .secondary-grid {
+        gap: 44px;
+      }
+
+      .secondary-grid a,
+      .secondary-grid img {
+        height: 48px;
+      }
+
     }
   </style>
 </head>
@@ -231,12 +278,29 @@
       </div>
 
     </div>
+
+    <div class="secondary-divider"></div>
+
+    <div class="secondary-grid">
+      <a href="https://ordinals.com/inscription/6771491ffd2ca1ca49384ec3c279ba9752bcb959a0ce38e8dad420a14b9345c3i0" target="_blank" rel="noopener" aria-label="Ordinals">
+        <img src="img/work-projects/ordinals-white.png" alt="Ordinals logo" />
+      </a>
+      <a href="https://sortes.joepillatsch.com" target="_blank" rel="noopener" aria-label="Sortes">
+        <img src="img/work-projects/sortes-white.png" alt="Sortes logo" />
+      </a>
+      <a href="https://ordinals.com/inscription/234202a2bfbb22339d111ab8c535ab4f8cfda67217b1502b5b69d3386c0f23bei0" target="_blank" rel="noopener" aria-label="Lincoln">
+        <img src="img/work-projects/lincoln-white.png" alt="Lincoln logo" />
+      </a>
+    </div>
   </section>
-  
+
   <section class="section">
     <div class="contact-icons">
       <a href="https://x.com/joepillatsch" target="_blank" rel="noopener" aria-label="X / Twitter">
         <img src="img/contact/x-white.png" alt="" />
+      </a>
+      <a href="https://github.com/joe-pillatsch" target="_blank" rel="noopener" aria-label="GitHub">
+        <img src="img/contact/github-white.png" alt="" />
       </a>
       <a href="mailto:joe.pillatsch@gmail.com" aria-label="Email">
         <img src="img/contact/mail-white.png" alt="" />
