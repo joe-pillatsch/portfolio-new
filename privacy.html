@@ -2,14 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; base-uri 'none'; form-action 'none'" />
+  <meta name="referrer" content="no-referrer" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
   <title>privacy policy — joe pillatsch</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>𑗋</text></svg>" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
   <style>
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300 700;
+      font-display: swap;
+      src: url(fonts/inter-latin.woff2) format('woff2');
+    }
+
     *, *::before, *::after {
       margin: 0;
       padding: 0;
@@ -101,12 +109,11 @@
 <body>
   <div class="wrap">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: August 1, 2026</p>
+    <p class="updated">Last updated: October 26, 2026</p>
 
     <p>
-      This policy covers the private personal software applications built and operated by
-      Joe Pillatsch, including the personal health and finance dashboard that connects to
-      the Oura API.
+      This policy covers the private personal software built and operated by Joe Pillatsch,
+      including a personal application that connects to the Oura API.
     </p>
 
     <h2>Who this software is for</h2>
@@ -119,19 +126,13 @@
     <h2>What data is accessed</h2>
     <p>
       Only the operator's own personal data, retrieved from services the operator already
-      holds an account with and has personally authorized. This may include:
+      holds an account with and has personally authorized.
     </p>
-    <ul>
-      <li>Health and biometric data from the Oura API (sleep, readiness, and activity metrics)</li>
-      <li>Personal financial account balances and transactions</li>
-      <li>Personal calendar and journal entries</li>
-    </ul>
 
     <h2>Where data is stored</h2>
     <p>
-      <strong>Locally, on hardware owned by the operator.</strong> The dashboard runs only on
-      the operator's own computer and is not published to the internet or reachable from any
-      external network. There is no hosted server, no cloud database, and no public endpoint.
+      <strong>Privately, under the operator's sole control.</strong> The software is not
+      published to the internet. There is no public endpoint and no other user.
     </p>
 
     <h2>What is shared</h2>
@@ -144,9 +145,9 @@
 
     <h2>Retention and deletion</h2>
     <p>
-      Data is retained locally for as long as the operator finds it useful, and is deleted at
-      the operator's discretion by removing local files. Because there is no server and no
-      other user, there is no data of anyone else to retain or delete.
+      Data is retained for as long as the operator finds it useful and deleted at the
+      operator's discretion. Because there is no other user, there is no data of anyone else
+      to retain or delete.
     </p>
 
     <h2>Third-party services</h2>

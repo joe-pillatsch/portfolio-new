@@ -2,14 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; base-uri 'none'; form-action 'none'" />
+  <meta name="referrer" content="no-referrer" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
   <title>terms of service — joe pillatsch</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>𑗋</text></svg>" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
   <style>
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300 700;
+      font-display: swap;
+      src: url(fonts/inter-latin.woff2) format('woff2');
+    }
+
     *, *::before, *::after {
       margin: 0;
       padding: 0;
@@ -92,18 +100,17 @@
 <body>
   <div class="wrap">
     <h1>Terms of Service</h1>
-    <p class="updated">Last updated: August 1, 2026</p>
+    <p class="updated">Last updated: October 26, 2026</p>
 
     <p>
-      These terms cover the private personal software applications built and operated by
-      Joe Pillatsch, including the personal health and finance dashboard that connects to
-      the Oura API.
+      These terms cover the private personal software built and operated by Joe Pillatsch,
+      including a personal application that connects to the Oura API.
     </p>
 
     <h2>Nature of the software</h2>
     <p>
       This software is <strong>private, personal, and single-user</strong>. It is built by one
-      individual for that individual's own use on their own hardware. It is not a commercial
+      individual for that individual's own use. It is not a commercial
       product, not offered or licensed to the public, and not available for anyone else to
       sign up for or use. There are no user accounts and no other users.
     </p>
@@ -123,11 +130,11 @@
       be incomplete, inaccurate, or broken at any time.
     </p>
 
-    <h2>Not medical or financial advice</h2>
+    <h2>Not professional advice</h2>
     <p>
-      This software displays personal health and financial data for the operator's own
-      reference. It does not provide medical, diagnostic, investment, or financial advice, and
-      nothing it produces should be relied on as such.
+      This software displays the operator's own data for the operator's own reference. It
+      does not provide medical, financial, or any other professional advice, and nothing it
+      produces should be relied on as such.
     </p>
 
     <h2>Third-party services</h2>
@@ -141,12 +148,6 @@
     <p>
       The operator may modify, suspend, or discontinue this software and these terms at any
       time, without notice, for any reason.
-    </p>
-
-    <h2>Governing law</h2>
-    <p>
-      These terms are governed by the laws of the State of Tennessee, United States, without
-      regard to its conflict of law provisions.
     </p>
 
     <h2>Contact</h2>
